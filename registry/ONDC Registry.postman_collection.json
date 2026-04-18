@@ -1,0 +1,237 @@
+{
+  "info": {
+    "_postman_id": "335b86c5-3e40-40bc-8b4b-a30c8b40d769",
+    "name": "ONDC Registry",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "367517",
+    "_collection_link": "https://go.postman.co/collection/367517-335b86c5-3e40-40bc-8b4b-a30c8b40d769?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Registry health check",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{ondc_registry_base_url}}/health",
+          "host": [
+            "{{ondc_registry_base_url}}"
+          ],
+          "path": [
+            "health"
+          ]
+        },
+        "description": "Registry health check"
+      },
+      "response": []
+    },
+    {
+      "name": "Registry public keys",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{ondc_registry_base_url}}/public/keys",
+          "host": [
+            "{{ondc_registry_base_url}}"
+          ],
+          "path": [
+            "public",
+            "keys"
+          ]
+        },
+        "description": "Fetch registry public keys"
+      },
+      "response": []
+    },
+    {
+      "name": "V1 Lookup – Query",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"subscriber_id\": \"{{subscriber_id}}\",\n  \"domain\": \"ONDC:RET1A\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{ondc_registry_base_url}}/lookup",
+          "host": [
+            "{{ondc_registry_base_url}}"
+          ],
+          "path": [
+            "lookup"
+          ]
+        },
+        "description": "V1 Lookup – query without authentication"
+      },
+      "response": []
+    },
+    {
+      "name": "V2 Lookup – Query subscribers by domain",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Authorization",
+            "value": "",
+            "type": "text"
+          },
+          {
+            "key": "Digest",
+            "value": "",
+            "type": "text",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"type\": \"BPP\",\n    \"domain\": \"ONDC:RET1A\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{ondc_registry_base_url}}/v2.0/lookup",
+          "host": [
+            "{{ondc_registry_base_url}}"
+          ],
+          "path": [
+            "v2.0",
+            "lookup"
+          ]
+        },
+        "description": "V2 Lookup – query subscribed participant by domain"
+      },
+      "response": []
+    }
+  ]
+}
