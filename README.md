@@ -18,7 +18,9 @@ Documentation and reference materials for ONDC shared infrastructure services â€
 
 | File | Description |
 | --- | --- |
-| [README.md](./gateway/README.md) | Gateway documentation (in progress) |
+| [README.md](./gateway/README.md) | Gateway overview â€” API endpoints (24 ONDC actions + health checks), authentication, request/response format, and validation pipeline |
+| [Gateway_ErrorCodes.md](./gateway/Gateway_ErrorCodes.md) | Complete list of error codes returned by the Gateway, grouped by category (Auth, Digest, Context, Schema, Payload, Participant, Routing, Policy, Dispatch, Receiver, Infra) with descriptions and resolutions |
+| [Gateway_Troubleshooting.md](./gateway/Gateway_Troubleshooting.md) | Troubleshooting guide covering common failure scenarios and step-by-step resolutions for NP integration |
 
 ---
 
